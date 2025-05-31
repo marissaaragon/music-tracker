@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: ./music-api/music-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+
+  frontend:
+    build:
+      context: ./music-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
